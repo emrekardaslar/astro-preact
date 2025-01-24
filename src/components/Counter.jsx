@@ -1,13 +1,14 @@
 import { useCounter } from '../contexts/CounterContext';
+import { INCREMENT, DECREMENT, RESET } from '../actions/counterActions';
 
 const Counter = () => {
-  const { dispatch } = useCounter(); // Ensure this is inside CounterProvider
+  const { dispatch } = useCounter();
 
   return (
     <div>
-      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-      <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
+      <button onClick={() => dispatch({ type: DECREMENT })}>-</button>
+      <button onClick={() => dispatch({ type: INCREMENT })}>+</button>
+      <button onClick={() => dispatch({ type: RESET })}>Reset</button>
     </div>
   );
 };
